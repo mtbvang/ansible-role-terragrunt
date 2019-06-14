@@ -6,3 +6,12 @@
     name:
       - curl
     state: present
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  
+- name: Ensure dependancies presence's
+  yum:
+    name:
+      - curl
+    state: present
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red HatEnterprise Linux'
+  
